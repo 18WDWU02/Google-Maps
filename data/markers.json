@@ -1,0 +1,162 @@
+[
+    {
+        "id": 1,
+        "place_name" : "Pizzeria Napoli",
+        "lat": -41.2936547,
+        "lng": 174.7802337,
+        "description" : "Italian restaurant serving wood-fired pizzas, calzones & pasta in a casual, cozy atmosphere.",
+        "openingHours" : {
+            "monday": "12-3PM, 5PM-12AM",
+            "tuesday": "12-3PM, 5PM-12AM",
+            "wednesday": "12-3PM, 5PM-12AM",
+            "thursday": "12-3PM, 5PM-12AM",
+            "friday": "12-3PM, 5PM-12AM",
+            "saturday": "5PM-12AM",
+            "sunday": "5PM-12AM"
+        }
+    },
+    {
+        "id": 2,
+        "place_name": "Heaven Woodfire Pizza",
+        "lat": -41.2959299,
+        "lng": 174.772154,
+        "description" : "",
+        "openingHours" : {
+            "monday": "",
+            "tuesday": "",
+            "wednesday": "",
+            "thursday": "",
+            "friday": "",
+            "saturday": "",
+            "sunday": ""
+        }
+    },
+    {
+        "id": 3,
+        "place_name": "Hell Pizza Cuba Street",
+        "lat": -41.297759,
+        "lng": 174.7710373,
+        "description" : "",
+        "openingHours" : {
+            "monday": "",
+            "tuesday": "",
+            "wednesday": "",
+            "thursday": "",
+            "friday": "",
+            "saturday": "",
+            "sunday": ""
+        }
+    },
+    {
+        "id": 4,
+        "place_name": "Tommy Millions",
+        "lat": -41.2924969,
+        "lng": 174.776630,
+        "description" : "",
+        "openingHours" : {
+            "monday": "",
+            "tuesday": "",
+            "wednesday": "",
+            "thursday": "",
+            "friday": "",
+            "saturday": "",
+            "sunday": ""
+        }
+    },
+    {
+        "id": 5,
+        "place_name": "One Red Dog",
+        "lat": -41.283531,
+        "lng": 174.7764303,
+        "description" : "",
+        "openingHours" : {
+            "monday": "",
+            "tuesday": "",
+            "wednesday": "",
+            "thursday": "",
+            "friday": "",
+            "saturday": "",
+            "sunday": ""
+        }
+    },
+    {
+        "id": 6,
+        "place_name": "Zibibbo",
+        "lat": -41.2917004,
+        "lng": 174.7773421,
+        "description" : "",
+        "openingHours" : {
+            "monday": "",
+            "tuesday": "",
+            "wednesday": "",
+            "thursday": "",
+            "friday": "",
+            "saturday": "",
+            "sunday": ""
+        }
+    },
+    {
+        "id": 7,
+        "place_name": "Pizza Pomodoro",
+        "lat": -41.2924937,
+        "lng": 174.774629,
+        "description" : "",
+        "openingHours" : {
+            "monday": "",
+            "tuesday": "",
+            "wednesday": "",
+            "thursday": "",
+            "friday": "",
+            "saturday": "",
+            "sunday": ""
+        }
+    },
+    {
+        "id": 8,
+        "place_name": "Scopa Caffe Cucina",
+        "lat": -41.293401,
+        "lng": 174.7736103,
+        "description" : "",
+        "openingHours" : {
+            "monday": "",
+            "tuesday": "",
+            "wednesday": "",
+            "thursday": "",
+            "friday": "",
+            "saturday": "",
+            "sunday": ""
+        }
+    },
+    {
+        "id": 9,
+        "place_name": "La Bella Italia",
+        "lat": -41.2250766,
+        "lng": 174.8649877,
+        "description" : "",
+        "openingHours" : {
+            "monday": "",
+            "tuesday": "",
+            "wednesday": "",
+            "thursday": "",
+            "friday": "",
+            "saturday": "",
+            "sunday": ""
+        }
+    },
+    {
+        "id": 10,
+        "place_name": "Mediterranean Foods Trattoria & Deli",
+        "lat": -41.313391,
+        "lng": 174.782340,
+        "description" : "",
+        "openingHours" : {
+            "monday": "",
+            "tuesday": "",
+            "wednesday": "",
+            "thursday": "",
+            "friday": "",
+            "saturday": "",
+            "sunday": ""
+        }
+    }
+]
