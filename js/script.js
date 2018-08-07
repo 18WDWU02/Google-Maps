@@ -111,9 +111,19 @@ function addAllMarkers(){
                 $("#places").append(
                     "<div class='place' data-id='"+markers[i].id+"'>"+
                         "<h3>"+markers[i].place_name+"</h3>"+
-                        "<p>"+markers[i].description+"</p>"+
-                        "<p>Opening Hours</p>"+
-                        "Monday: "+markers[i].openingHours.monday+
+                        "<div class='panel'>"+
+                            "<p>"+markers[i].description+"</p><br>"+
+                            "<p>Opening Hours</p>"+
+                            "<ul>"+
+                                "<li>Monday: "+markers[i].openingHours.monday+"</li>"+
+                                "<li>Tuesday: "+markers[i].openingHours.tuesday+"</li>"+
+                                "<li>Wednesday: "+markers[i].openingHours.wednesday+"</li>"+
+                                "<li>Thursday: "+markers[i].openingHours.thursday+"</li>"+
+                                "<li>Friday: "+markers[i].openingHours.friday+"</li>"+
+                                "<li>Saturday: "+markers[i].openingHours.saturday+"</li>"+
+                                "<li>Sunday: "+markers[i].openingHours.sunday+"</li>"+
+                            "</ul>"+
+                        "</div>"+
                     "</div>"+
                     "<hr>"
                 );
@@ -129,6 +139,12 @@ function addAllMarkers(){
                     title: markers[i].place_name,
                     markerID: markers[i].id,
                     monday: markers[i].openingHours.monday,
+                    tuesday: markers[i].openingHours.tuesday,
+                    wednesday: markers[i].openingHours.wednesday,
+                    thursday: markers[i].openingHours.thursday,
+                    friday: markers[i].openingHours.friday,
+                    saturday: markers[i].openingHours.saturday,
+                    sunday: markers[i].openingHours.sunday,
                     description: markers[i].description,
                     map: map,
                     animation: google.maps.Animation.DROP,
@@ -166,10 +182,24 @@ function markerClickEvent(marker){
     if(infobox){
         infobox.close();
     }
-
     infobox = new google.maps.InfoWindow();
+    map.panTo(marker.position);
     google.maps.event.addListener(marker, 'click', function(){
-        infobox.setContent('<div><strong>'+marker.title+'</strong><br>'+marker.description+'<br>Monday: '+marker.monday+'</div>');
+        infobox.setContent(
+            '<div class="infobox">'+
+                '<strong>'+marker.title+'</strong><br>'+
+                marker.description+'<br>'+
+                '<ul>'+
+                    '<li>Monday: '+marker.monday+'</li>'+
+                    '<li>Tuesday: '+marker.tuesday+'</li>'+
+                    '<li>Wednesday: '+marker.wednesday+'</li>'+
+                    '<li>Thursday: '+marker.thursday+'</li>'+
+                    '<li>Friday: '+marker.friday+'</li>'+
+                    '<li>Saturday: '+marker.saturday+'</li>'+
+                    '<li>Sunday: '+marker.sunday+'</li>'+
+                '</ul>'+
+                'Monday: '+marker.monday+
+            '</div>');
         infobox.open(map, marker);
     });
 }
@@ -182,14 +212,32 @@ function moveMap(){
 
 
 $(document).on('click', '.place', function(){
+    if(infobox){
+        infobox.close();
+    }
     var id = $(this).data('id');
+    $('.panel').slideUp();
+    $(this).find('.panel').slideDown()
     for (var i = 0; i < allMarkers.length; i++) {
         if(allMarkers[i].markerID == id){
             map.panTo(allMarkers[i].position);
             map.setZoom(17);
             infobox = new google.maps.InfoWindow();
-            infobox.setContent('<div><strong>'+allMarkers[i].title+'</strong><br>'+allMarkers[i].description+'<br>Monday: '+allMarkers[i].monday+'</div>');
-
+            infobox.setContent(
+                '<div class="infobox">'+
+                    '<strong>'+allMarkers[i].title+'</strong><br>'+
+                    allMarkers[i].description+'<br>'+
+                    '<ul>'+
+                        '<li>Monday: '+allMarkers[i].monday+'</li>'+
+                        '<li>Tuesday: '+allMarkers[i].tuesday+'</li>'+
+                        '<li>Wednesday: '+allMarkers[i].wednesday+'</li>'+
+                        '<li>Thursday: '+allMarkers[i].thursday+'</li>'+
+                        '<li>Friday: '+allMarkers[i].friday+'</li>'+
+                        '<li>Saturday: '+allMarkers[i].saturday+'</li>'+
+                        '<li>Sunday: '+allMarkers[i].sunday+'</li>'+
+                    '</ul>'+
+                    'Monday: '+allMarkers[i].monday+
+                '</div>');
             infobox.open(map, allMarkers[i]);
             break;
         }

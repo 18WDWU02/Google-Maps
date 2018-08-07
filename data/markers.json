@@ -6,12 +6,12 @@
         "lng": 174.7802337,
         "description" : "Italian restaurant serving wood-fired pizzas, calzones & pasta in a casual, cozy atmosphere.",
         "openingHours" : {
-            "monday": "12-3PM, 5PM-12AM",
+            "monday": "5PM-12AM",
             "tuesday": "12-3PM, 5PM-12AM",
             "wednesday": "12-3PM, 5PM-12AM",
             "thursday": "12-3PM, 5PM-12AM",
             "friday": "12-3PM, 5PM-12AM",
-            "saturday": "5PM-12AM",
+            "saturday": "12-3PM, 5PM-12AM",
             "sunday": "5PM-12AM"
         }
     },
@@ -20,15 +20,15 @@
         "place_name": "Heaven Woodfire Pizza",
         "lat": -41.2959299,
         "lng": 174.772154,
-        "description" : "",
+        "description" : "The locals have loved Heaven Woodfire Pizza for years. We believe in using fresh ingredients to create the tastiest dishes.",
         "openingHours" : {
-            "monday": "",
-            "tuesday": "",
-            "wednesday": "",
-            "thursday": "",
-            "friday": "",
-            "saturday": "",
-            "sunday": ""
+            "monday": "11AM-10PM",
+            "tuesday": "11AM-10PM",
+            "wednesday": "11AM-11PM",
+            "thursday": "11AM-11PM",
+            "friday": "11AM-11PM",
+            "saturday": "11AM-11PM",
+            "sunday": "11AM-11PM"
         }
     },
     {
@@ -36,15 +36,15 @@
         "place_name": "Hell Pizza Cuba Street",
         "lat": -41.297759,
         "lng": 174.7710373,
-        "description" : "",
+        "description" : "The best damned pizza in this life or the next. ... of HELL",
         "openingHours" : {
-            "monday": "",
-            "tuesday": "",
-            "wednesday": "",
-            "thursday": "",
-            "friday": "",
-            "saturday": "",
-            "sunday": ""
+            "monday": "12–10PM",
+            "tuesday": "11AM–10PM",
+            "wednesday": "11AM–10PM",
+            "thursday": "11AM–10PM",
+            "friday": "11AM–11PM",
+            "saturday": "11AM–11PM",
+            "sunday": "11AM–10PM"
         }
     },
     {
@@ -54,13 +54,13 @@
         "lng": 174.776630,
         "description" : "",
         "openingHours" : {
-            "monday": "",
-            "tuesday": "",
-            "wednesday": "",
-            "thursday": "",
-            "friday": "",
-            "saturday": "",
-            "sunday": ""
+            "monday": "11AM–11PM",
+            "tuesday": "11AM–11PM",
+            "wednesday": "11AM–11PM",
+            "thursday": "11AM–11PM",
+            "friday": "11AM-4AM",
+            "saturday": "11AM-4AM",
+            "sunday": "11AM–11PM"
         }
     },
     {
@@ -68,15 +68,15 @@
         "place_name": "One Red Dog",
         "lat": -41.283531,
         "lng": 174.7764303,
-        "description" : "",
+        "description" : "At One Red Dog restaurant in Wellington, we stake our name on serving delicious, original pizza, pasta & antipasto.",
         "openingHours" : {
-            "monday": "",
-            "tuesday": "",
-            "wednesday": "",
-            "thursday": "",
-            "friday": "",
-            "saturday": "",
-            "sunday": ""
+            "monday": "11AM-10PM",
+            "tuesday": "11AM-10PM",
+            "wednesday": "11AM-10PM",
+            "thursday": "11AM-10PM",
+            "friday": "11AM-10PM",
+            "saturday": "11AM-10PM",
+            "sunday": "11AM-10PM"
         }
     },
     {
@@ -84,15 +84,15 @@
         "place_name": "Zibibbo",
         "lat": -41.2917004,
         "lng": 174.7773421,
-        "description" : "",
+        "description" : "Informal, contemporary locale featuring creative, Mediterranean-inspired tapas, mains & pizza.",
         "openingHours" : {
-            "monday": "",
-            "tuesday": "",
-            "wednesday": "",
-            "thursday": "",
-            "friday": "",
-            "saturday": "",
-            "sunday": ""
+            "monday": "4–10:30PM",
+            "tuesday": "11:30AM–10:30PM",
+            "wednesday": "11:30AM–10:30PM",
+            "thursday": "11:30AM–10:30PM",
+            "friday": "11:30AM–10:30PM",
+            "saturday": "12–10:30PM",
+            "sunday": "Closed"
         }
     },
     {
@@ -100,15 +100,15 @@
         "place_name": "Pizza Pomodoro",
         "lat": -41.2924937,
         "lng": 174.774629,
-        "description" : "",
+        "description" : "Pizza Pomodoro, Neapolitan wood fired pizza in Central Wellington since 2000. Take away, delivery or eat in.",
         "openingHours" : {
-            "monday": "",
-            "tuesday": "",
-            "wednesday": "",
-            "thursday": "",
-            "friday": "",
-            "saturday": "",
-            "sunday": ""
+            "monday": "5–9PM",
+            "tuesday": "5–9PM",
+            "wednesday": "11AM–2PM, 5–9:30PM",
+            "thursday": "11AM–2PM, 5–9:30PM",
+            "friday": "11AM–2PM, 5–9:30PM",
+            "saturday": "11AM–2PM, 5–9:30PM",
+            "sunday": "5–9PM"
         }
     },
     {
@@ -116,15 +116,15 @@
         "place_name": "Scopa Caffe Cucina",
         "lat": -41.293401,
         "lng": 174.7736103,
-        "description" : "",
+        "description" : "Italian cafe serving pizza & pasta in a casual, contemporary space with an all-weather courtyard.",
         "openingHours" : {
-            "monday": "",
-            "tuesday": "",
-            "wednesday": "",
-            "thursday": "",
-            "friday": "",
-            "saturday": "",
-            "sunday": ""
+            "monday": "8AM–10PM",
+            "tuesday": "8AM–10PM",
+            "wednesday": "8AM–10:30PM",
+            "thursday": "8AM–10:30PM",
+            "friday": "8AM–11PM",
+            "saturday": "9AM–11PM",
+            "sunday": "9AM–10PM"
         }
     },
     {
@@ -132,15 +132,15 @@
         "place_name": "La Bella Italia",
         "lat": -41.2250766,
         "lng": 174.8649877,
-        "description" : "",
+        "description" : "A unique combination of a restaurant, café, and retail shop. La Bella Italia in Petone, Wellington, was born from director, Antonio Cacace’s passion to share with the beauty of traditional, authentic Italian products and cuisine with Kiwis.",
         "openingHours" : {
-            "monday": "",
-            "tuesday": "",
-            "wednesday": "",
-            "thursday": "",
-            "friday": "",
-            "saturday": "",
-            "sunday": ""
+            "monday": "7:30AM–5PM",
+            "tuesday": "7:30AM–5PM",
+            "wednesday": "7:30AM–10:30PM",
+            "thursday": "7:30AM–10:30PM",
+            "friday": "7:30AM–10:30PM",
+            "saturday": "9AM–10:30PM",
+            "sunday": "9AM–9PM"
         }
     },
     {
@@ -148,15 +148,15 @@
         "place_name": "Mediterranean Foods Trattoria & Deli",
         "lat": -41.313391,
         "lng": 174.782340,
-        "description" : "",
+        "description" : "Sharing our traditions, our love of wholesome food, and our passion for life itself.",
         "openingHours" : {
-            "monday": "",
-            "tuesday": "",
-            "wednesday": "",
-            "thursday": "",
-            "friday": "",
-            "saturday": "",
-            "sunday": ""
+            "monday": "8AM–10:30PM",
+            "tuesday": "8AM–10:30PM",
+            "wednesday": "8AM–10:30PM",
+            "thursday": "8AM–10:30PM",
+            "friday": "8AM–10:30PM",
+            "saturday": "8AM–10:30PM",
+            "sunday": "9AM–10:30PM"
         }
     }
 ]
