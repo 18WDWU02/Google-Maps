@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Geo Location API</title>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false&key=AIzaSyDPFWi2DAGPooOWtmjgJ83hHIephhvvWig"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+</head>
+<body>
+
+
+<div>
+     <h3> Enter an adress and press the button</h3>
+
+    <input id="address" type="text" placeholder="Enter address here" />
+  <input type="button" value="Get Lat and Long" onclick="inputAddress()" />
+    <div>
+        <p>Latitude:
+            <input type="text" id="latitude" readonly />
+        </p>
+        <p>Longitude:
+            <input type="text" id="longitude" readonly />
+        </p>
+    </div>
+</div>
+
+
+
+</body>
+</html>
+
+
+
