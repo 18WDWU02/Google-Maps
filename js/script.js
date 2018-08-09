@@ -1,14 +1,11 @@
 google.maps.event.addDomListener(window, 'load', initmap);
 
-var map, infobox, allMarkers = [];
-
+var map, infobox, allMarkers = [], userLocation, TransportMode = "DRIVING", directionDisplay, currentMarker;
+var wellingtonStation = new google.maps.LatLng(-41.279214,174.780340);
 function initmap(){
 
     var mapOptions = {
-        center :{
-            lat: -41.279214,
-            lng: 174.780340
-        },
+        center : wellingtonStation,
         zoom: 12,
         // maxZoom: 12,
         // minZoom: 10,
@@ -89,15 +86,7 @@ function initmap(){
 
     map = new google.maps.Map(document.getElementById('map'), mapOptions);
     addAllMarkers();
-
-    // // Adding one single marker onto our map
-    // var myLatlng = new google.maps.LatLng(-41.279214,174.780340);
-    // var marker = new google.maps.Marker({
-    //     position: myLatlng,
-    //     title:"Hello World!"
-    // });
-    //
-    // marker.setMap(map);
+    FindUser();
 
 }
 
@@ -128,9 +117,6 @@ function addAllMarkers(){
                     "<hr>"
                 );
 
-                // // If we want our markers to drop 1 at a time. Need to remove the var marker code bellow
-                // addMarkerWithTimeout(markers[i], i * 400);
-
                 var marker = new google.maps.Marker({
                     position: {
                         lat: markers[i].lat,
@@ -152,24 +138,7 @@ function addAllMarkers(){
                 });
                 markerClickEvent(marker);
                 allMarkers.push(marker);
-
             }
-            // // If we want our markers to drop 1 at a time
-
-            // function addMarkerWithTimeout(marker, timeout) {
-            //   window.setTimeout(function() {
-            //     markers.push(new google.maps.Marker({
-            //       position: {
-            //           lat: marker.lat,
-            //           lng: marker.lng
-            //       },
-            //       title: marker.place_name,
-            //       map: map,
-            //       animation: google.maps.Animation.DROP,
-            //       icon: 'images/PizzaIcon.png'
-            //     }));
-            //   }, timeout);
-            // }
         },
         error:function(error){
             console.log("Error, something went wrong, can't get the markers");
@@ -179,75 +148,136 @@ function addAllMarkers(){
 }
 
 function markerClickEvent(marker){
-    if(infobox){
-        infobox.close();
-    }
     infobox = new google.maps.InfoWindow();
     map.panTo(marker.position);
     google.maps.event.addListener(marker, 'click', function(){
-        infobox.setContent(
-            '<div class="infobox">'+
-                '<strong>'+marker.title+'</strong><br>'+
-                marker.description+'<br>'+
-                '<ul>'+
-                    '<li>Monday: '+marker.monday+'</li>'+
-                    '<li>Tuesday: '+marker.tuesday+'</li>'+
-                    '<li>Wednesday: '+marker.wednesday+'</li>'+
-                    '<li>Thursday: '+marker.thursday+'</li>'+
-                    '<li>Friday: '+marker.friday+'</li>'+
-                    '<li>Saturday: '+marker.saturday+'</li>'+
-                    '<li>Sunday: '+marker.sunday+'</li>'+
-                '</ul>'+
-                'Monday: '+marker.monday+
-            '</div>');
-        infobox.open(map, marker);
+        showInfoBox(marker);
     });
 }
 
-function moveMap(){
-    var latlng = new google.maps.LatLng(-41.2959299, 174.772154);
-    map.panTo(latlng);
-    map.setZoom(17);
-}
-
-
 $(document).on('click', '.place', function(){
-    if(infobox){
-        infobox.close();
-    }
     var id = $(this).data('id');
     $('.panel').slideUp();
     $(this).find('.panel').slideDown()
     for (var i = 0; i < allMarkers.length; i++) {
         if(allMarkers[i].markerID == id){
-            map.panTo(allMarkers[i].position);
-            map.setZoom(17);
-            infobox = new google.maps.InfoWindow();
-            infobox.setContent(
-                '<div class="infobox">'+
-                    '<strong>'+allMarkers[i].title+'</strong><br>'+
-                    allMarkers[i].description+'<br>'+
-                    '<ul>'+
-                        '<li>Monday: '+allMarkers[i].monday+'</li>'+
-                        '<li>Tuesday: '+allMarkers[i].tuesday+'</li>'+
-                        '<li>Wednesday: '+allMarkers[i].wednesday+'</li>'+
-                        '<li>Thursday: '+allMarkers[i].thursday+'</li>'+
-                        '<li>Friday: '+allMarkers[i].friday+'</li>'+
-                        '<li>Saturday: '+allMarkers[i].saturday+'</li>'+
-                        '<li>Sunday: '+allMarkers[i].sunday+'</li>'+
-                    '</ul>'+
-                    'Monday: '+allMarkers[i].monday+
-                '</div>');
-            infobox.open(map, allMarkers[i]);
+            // map.panTo(allMarkers[i].position);
+            // map.setZoom(17);
+            showDirection(allMarkers[i].position, TransportMode);
+            currentMarker = allMarkers[i];
+            showInfoBox(allMarkers[i]);
+            findPlaceInfo(allMarkers[i].title);
             break;
         }
     }
 });
 
+var service;
+function findPlaceInfo(placeName){
+    console.log(placeName);
+    var request = {
+        query: placeName +' Wellington New Zealand',
+        fields: ['id', 'name', 'photos', 'formatted_address', 'rating', 'opening_hours']
+    };
+    service = new google.maps.places.PlacesService(map);
+    service.findPlaceFromQuery(request, getPlaces);
+}
+
+function getPlaces(results, status){
+    console.log(status);
+    if(status == "OK"){
+        for (var i = 0; i < results.length; i++) {
+            console.log(results[i]);
+            var photos = results[i].photos;
+            console.log(photos[0].getUrl({
+                'maxWidth': 300,
+                'maxHeight': 300
+            }));
+        }
+    } else {
+        console.log("Something wrong with getting the places");
+    }
+}
 
 
 
+function showInfoBox(marker){
+    if(infobox){
+        infobox.close();
+    }
+    infobox = new google.maps.InfoWindow();
+    infobox.setContent(
+        '<div class="infobox">'+
+            '<strong>'+marker.title+'</strong><br>'+
+            marker.description+'<br>'+
+            '<ul>'+
+                '<li>Monday: '+marker.monday+'</li>'+
+                '<li>Tuesday: '+marker.tuesday+'</li>'+
+                '<li>Wednesday: '+marker.wednesday+'</li>'+
+                '<li>Thursday: '+marker.thursday+'</li>'+
+                '<li>Friday: '+marker.friday+'</li>'+
+                '<li>Saturday: '+marker.saturday+'</li>'+
+                '<li>Sunday: '+marker.sunday+'</li>'+
+            '</ul>'+
+            'Monday: '+marker.monday+
+        '</div>');
+    infobox.open(map, marker);
+}
 
+//This will only work for secured networks
+//So we are forcing our userLocation to be at the wellington Train station
+function FindUser(){
+    // if(navigator.geolocation){
+	//     navigator.geolocation.getCurrentPosition(function(position){
+    // 		userLocation = new google.maps.Marker({
+    // 			position:{
+    // 				lat: position.coords.latitude,
+    // 				lng: position.coords.longitude
+    // 			},
+    // 			map: map,
+    // 			animation: google.maps.Animation.DROP
+    // 		});
+    //         map.panTo(userLocation.position);
+	//      })
+    // }
+	userLocation = new google.maps.Marker({
+		position: wellingtonStation,
+		map: map,
+		animation: google.maps.Animation.DROP
+	});
+}
 
+function showDirection(location, mode){
+	if(directionDisplay){
+		directionDisplay.setMap(null);
+	}
+	var directionService = new google.maps.DirectionsService();
+	directionDisplay = new google.maps.DirectionsRenderer({
+        polylineOptions: {
+          strokeColor: "red"
+        }
+      });
+
+	directionDisplay.setMap(map);
+
+	directionService.route({
+		origin: userLocation.position,
+		destination: {location},
+		travelMode: google.maps.TravelMode[mode],
+	}, function(response, status){
+		if(status == "OK"){
+			directionDisplay.setDirections(response);
+		} else if(status == "NOT_FOUND"){
+
+		} else if(status == "ZERO_RESULTS"){
+
+		}
+	});
+}
+
+function changeTransport(mode){
+	TransportMode = mode;
+	showDirection(currentMarker.position, TransportMode);
+}
 
 // end of page
